@@ -36,10 +36,18 @@ RUN if ! [ /usr/share/zoneinfo/${TZ} -ef /etc/localtime ]; then \
 #RUN  pip3 install -e 'git+https://github.com/ckan/ckanext-scheming.git@master#egg=ckanext-scheming'
 
 ### Pages ###
+RUN  pip3 install -e git+https://github.com/NaturalHistoryMuseum/ckanext-doi.git#egg=ckanext-doi 
+
+# RUN echo "$PWD"
+# RUN ckan doi initdb
+### Pages ###
 RUN  pip3 install -e git+https://github.com/ckan/ckanext-pages.git#egg=ckanext-pages
 
 ### Mapviews ###
 RUN  pip3 install -e git+https://github.com/ckan/ckanext-mapviews.git#egg=ckanext-mapviews
+
+### Datarequests ###
+RUN pip3 install -e git+https://github.com/conwetlab/ckanext-datarequests.git#egg=ckanext-datarequests
 
 ### DCAT ###
 #RUN  pip3 install -e git+https://github.com/ckan/ckanext-dcat.git@v0.0.6#egg=ckanext-dcat && \
